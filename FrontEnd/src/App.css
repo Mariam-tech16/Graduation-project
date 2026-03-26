@@ -1,42 +1,45 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import "tailwindcss";
+@import "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap'); */
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input {
+  @apply bg-gray-200 border-none px-4 py-2 my-2 w-full rounded;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.btn {
+  @apply rounded-full bg-red-500 text-white text-xs font-bold px-10 py-3 mt-3 uppercase tracking-wider transition active:scale-95;
 }
 
-@keyframes logo-spin {
+.ghost-btn {
+  @apply border border-white text-white rounded-full px-10 py-3 text-xs font-bold uppercase;
+}
+
+.btn-primary {
+  @apply bg-red-500 hover:bg-red-600 text-white text-xs font-bold px-10 py-3 mt-4 rounded-full uppercase tracking-wider transition active:scale-95 shadow-lg;
+}
+
+.btn-ghost {
+  @apply border border-white text-white px-8 py-2 rounded-full text-xs uppercase hover:bg-white hover:text-black transition;
+}
+@keyframes draw {
   from {
-    transform: rotate(0deg);
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
   }
   to {
-    transform: rotate(360deg);
+    stroke-dashoffset: 0;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.animate-draw {
+  animation: draw 2s ease forwards;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
